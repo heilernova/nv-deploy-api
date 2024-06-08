@@ -1,6 +1,8 @@
-# [ SM Panel | API ]
+# [ API - Novah | Deploy ]
 
-# Variables de entorno
+API for deploying web projects on VPS
+
+# Environment Variables
 ```
 NODE_ENV=development
 
@@ -13,4 +15,3 @@ DB_PASSWORD=postgres
 DB_DATABASE=sm_panel
 DB_PORT=5432
 ```
-# nv-deploy-api
