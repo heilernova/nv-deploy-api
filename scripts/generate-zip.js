@@ -1,7 +1,7 @@
 const { createWriteStream } = require("node:fs");
 const archiver = require("archiver");
 
-const zipName = "smpanel-api.zip";
+const zipName = "nv-deploy-api.zip";
 const ouPut = createWriteStream(zipName);
 const archive = archiver("zip");
 
