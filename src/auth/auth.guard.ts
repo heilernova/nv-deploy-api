@@ -1,5 +1,4 @@
 import { CanActivate, ExecutionContext, HttpException, Injectable } from '@nestjs/common';
-import { Observable } from 'rxjs';
 import { ISession } from './auth.interfaces';
 import { ConnectionDbService } from '@app/common/connection-db';
 import { Reflector } from '@nestjs/core';
