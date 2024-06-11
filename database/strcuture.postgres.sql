@@ -86,6 +86,7 @@ create table apps
     "last_deploy_at" timestamp,
     "domain" varchar(100) not null,
     "name" varchar(50) not null,
+    "process_name" varchar(100),
     "version" varchar(10),
     "location" varchar(600) not null unique,
     "startup_file" varchar(50),
