@@ -19,6 +19,10 @@ export class AppCreateDto implements IApplicationCreate {
     name!: string;
 
     @IsString()
+    @MaxLength(100)
+    process_name!: string;
+
+    @IsString()
     @MaxLength(600)
     location!: string;
 

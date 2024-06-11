@@ -45,14 +45,14 @@ export class Pm2Service {
     }
 
     reload(value: string | number, path: string, env?: { [key: string]: string }): void {
-        if (typeof value == 'string'){
-            let process = this.getAll().find(x => x.name == value);
-            if (process){
-                value = process.pm_id;
-            } else {
-                return;
-            }
-        }
+        // if (typeof value == 'string'){
+        //     let process = this.getAll().find(x => x.name == value);
+        //     if (process){
+        //         value = process.pm_id;
+        //     } else {
+        //         return;
+        //     }
+        // }
         if (env){
             execSync(`pm2 reload ${value} --update-env`, { env: { ...process.env, ...env } });
         } else {
@@ -65,7 +65,7 @@ export class Pm2Service {
     }
 
     runApp(app: IApplication){
-        let processName: string = `${app.domain}__${app.name}`.toLowerCase();
+        let processName: string = app.process_name ?? `${app.domain}_${app.name.replace(' ', '_')}`.toLowerCase();
         let process: Pm2Process | undefined = this.getAll().find(x => x.name == processName);
 
         if (app.startup_file && existsSync(join(app.location, app.startup_file))){

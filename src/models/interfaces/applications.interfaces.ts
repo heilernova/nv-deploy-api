@@ -19,6 +19,7 @@ export interface IApplicationDbRow {
     last_deploy_at: Date | null;
     domain: string;
     name: string;
+    process_name: string;
     version: string | null;
     location: string;
     startup_file: string;
